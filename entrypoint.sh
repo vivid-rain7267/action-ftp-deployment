@@ -8,4 +8,4 @@ echo "==== SOURCE DATA ===="
 ls -la "$INPUT_SOURCE_FOLDER"
 
 echo "==== UPLOADING TO SERVER ===="
-lftp -c "open -u $INPUT_FTP_PASSWORD,$INPUT_FTP_USER $INPUT_FTP_SERVER; set ssl:verify-certificate no; set ftp:ssl-allow no; mirror -R $INPUT_SOURCE_FOLDER ."
+lftp --debug -c "open -u $INPUT_FTP_USER,$INPUT_FTP_PASSWORD $INPUT_FTP_SERVER; set ssl:verify-certificate no; set ftp:ssl-allow no; mirror -R $INPUT_SOURCE_FOLDER ."
