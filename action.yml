@@ -1,0 +1,29 @@
+name: 'Deploy to FTP'
+author: 'Martin Kukolos'
+description: 'Containerized environment to deploy static sites to the FTP sterver'
+branding:
+  icon: 'package'
+  color: 'black'
+inputs:
+  ftp_server:
+    description: "Address of your FTP server"
+    required: true
+  ftp_user:
+    description: 'User with access to your FTP share'
+    required: true
+  ftp_password:
+    description: 'Your FTP password'
+    required: false
+    default: '1024M'
+  source_folder:
+    description: 'Folder where are files you want upload to the server'
+    default: './public/'
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.ftp_server }} #$1
+    - ${{ inputs.ftp_user }} #$2
+    - ${{ inputs.ftp_password }} #$3
+    - ${{ inputs.source_folder }} #$4
