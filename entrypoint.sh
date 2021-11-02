@@ -13,4 +13,4 @@ echo "==== UPLOADING TO SERVER ===="
 lftp --debug \
   -u "${INPUT_FTP_USER}","${INPUT_FTP_PASSWORD}" \
   "${INPUT_FTP_SERVER}" \
-  -e "set ssl:verify-certificate no; set ftp:ssl-allow no; mirror -R ${INPUT_SOURCE_FOLDER} .; quit;"
+  -e "set ssl:verify-certificate no; set ftp:ssl-allow no; mirror -R ${INPUT_SOURCE_FOLDER} ."
