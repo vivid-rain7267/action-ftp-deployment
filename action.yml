@@ -22,8 +22,3 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.ftp_server }} #$1
-    - ${{ inputs.ftp_user }} #$2
-    - ${{ inputs.ftp_password }} #$3
-    - ${{ inputs.source_folder }} #$4
