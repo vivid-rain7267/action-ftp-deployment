@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 
 echo "==== INPUTS ===="
 echo "TARGET SERVER: $INPUT_FTP_SERVER"
