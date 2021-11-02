@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-RUN apk add --no-cache lftp
+RUN apk add --no-cache lftp bash
 
 ADD entrypoint.sh /entrypoint.sh
 
