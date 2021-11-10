@@ -8,8 +8,8 @@ SOURCE_DIRECTORY=$4
 apk add --no-cache lftp bash
 
 echo "==== SOURCE DATA ===="
-ls -la "$INPUT_SOURCE_FOLDER"
+ls -la "$SOURCE_DIRECTORY"
 
 
 echo "==== UPLOADING TO SERVER ===="
-lftp -c "open -u $FTP_USER,$FTP_PASSWORD $FTP_SERVER; set ssl:verify-certificate no; set ftp:ssl-allow no; mirror -R $SOURCE_DIRECTORY ."
+lftp -c 'open -u $FTP_USER,$FTP_PASSWORD $FTP_SERVER; set ssl:verify-certificate no; set ftp:ssl-allow no; mirror -R $SOURCE_DIRECTORY .'
