@@ -12,4 +12,4 @@ ls -la "$SOURCE_DIRECTORY"
 
 
 echo "==== UPLOADING TO SERVER ===="
-lftp -c 'open -u $FTP_USER,$FTP_PASSWORD $FTP_SERVER; set ssl:verify-certificate no; set ftp:ssl-allow no; mirror -R $SOURCE_DIRECTORY .'
+lftp -c "open -u $FTP_USER,$FTP_PASSWORD $FTP_SERVER; set ssl:verify-certificate no; set ftp:ssl-allow no; mirror -R $SOURCE_DIRECTORY ."
