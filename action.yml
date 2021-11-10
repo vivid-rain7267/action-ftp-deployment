@@ -5,20 +5,25 @@ branding:
   icon: 'package'
   color: 'black'
 inputs:
-  ftp_server:
+  ftp-server:
     description: "Address of your FTP server"
     required: true
-  ftp_user:
+  ftp-user:
     description: 'User with access to your FTP share'
     required: true
-  ftp_password:
+  ftp-password:
     description: 'Your FTP password'
     required: false
     default: '1024M'
-  source_folder:
+  source-folder:
     description: 'Folder where are files you want upload to the server'
     default: './public/'
     required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+    - ${{ inputs.ftp-server }} #1
+    - ${{ inputs.ftp-user }} #2
+    - ${{ inputs.ftp-password }} #3
+    - ${{ inputs.source-folder }} #4
